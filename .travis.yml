@@ -1,0 +1,29 @@
+language: cpp
+dist: focal
+matrix:
+    include:
+    - env: TARGET=Matrix
+addons:
+ apt:
+  packages:
+  - doxygen
+install:
+  - sudo apt-get install -y doxygen graphviz
+script:
+ - cmake .
+ - cmake --build .
+ - cmake --build . --target test
+ - cmake --build . --target package
+ - doxygen Doxyfile
+deploy:
+  - provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN
+    local_dir: ./Documentation/html
+    keep_history: true
+    on:
+      branch: master
+  - provider: script
+    skip_cleanup: true
+    script:
+    - curl -T $TARGET-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uazbyx:$BINTRAY_API_K "https://api.bintray.com/content/azbyx/azbyx/$TARGET/$TRAVIS_BUILD_NUMBER/$TARGET-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=trusty;deb_component=main;deb_architecture=amd64;publish=1"
