@@ -14,9 +14,11 @@ exec_program(git ARGS submodule update --init --recursive)
 get_filename_component(GTEST_SOURCE ./googletest ABSOLUTE)
 add_subdirectory(${GTEST_SOURCE} "googletest")
 
-add_executable(${NAME_EXECUTABLE} ./sources/main.cpp ${NAME_HEADERS})
+add_executable(${NAME_EXECUTABLE} ./sources/main.cpp)
 
-add_executable(${NAME_TEST} ./sources/gtests.cpp ${NAME_HEADERS})
+add_executable(${NAME_TEST} ./sources/gtests.cpp)
+
+target_link_libraries(${NAME_TEST} PRIVATE gtest)
 
 set_target_properties(${NAME_EXECUTABLE} PROPERTIES
     CXX_STANDARD 17
