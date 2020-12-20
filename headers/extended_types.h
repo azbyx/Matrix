@@ -106,7 +106,7 @@ namespace impl {
 
         auto getTuple() const { return indexes; }
 
-        impl::typeTuple<SZ> indexes;
+        typeTuple<SZ> indexes;
     };
 
     /**
