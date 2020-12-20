@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.2)
 
-set(NAME_EXECUTABLE "Matrix")
+set(NAME_EXECUTABLE "matrix")
 set(NAME_TEST "tests_matrix")
-set(NAME_HEADERS "./headers/base_types.h" "./headers/matrix.h" )
+set(NAME_HEADERS "./headers/extended_types.h" "./headers/extended_matrix.h" )
 
 if($ENV{TRAVIS_BUILD_NUMBER})
 	project(${NAME_EXECUTABLE} VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER}  LANGUAGES CXX)
