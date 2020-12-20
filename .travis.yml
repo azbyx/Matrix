@@ -2,7 +2,7 @@ language: cpp
 dist: focal
 matrix:
     include:
-    - env: TARGET=Matrix
+    - env: TARGET=matrix
 addons:
  apt:
   packages:
