@@ -1,0 +1,194 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>MVC: Исходный файл headers/extended_types.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">MVC
+   &#160;<span id="projectnumber">0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_7f57b1e41c5acd0e859ae5f3a2b075a9.html">headers</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">extended_types.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="extended__types_8h.html">См. документацию.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;tuple&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespaceimpl.html">    7</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceimpl.html">impl</a> {</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="namespaceimpl.html#adfb0b960ef51ea014c01bd1bcf50c996">   13</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="namespaceimpl.html#adfb0b960ef51ea014c01bd1bcf50c996">params</a>(std::index_sequence&lt;0&gt;) {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">return</span> std::tuple&lt;size_t&gt;{};</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">template</span>&lt;std::size_t I, std::size_t... O&gt;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="namespaceimpl.html#a50a1ef67b8076f08888cf87b68de3b97">   21</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="namespaceimpl.html#adfb0b960ef51ea014c01bd1bcf50c996">params</a>(std::index_sequence&lt;I, O...&gt;) {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">auto</span> tup = std::tuple{ <span class="keywordtype">size_t</span>{} };</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">auto</span> seq = std::make_index_sequence&lt;<span class="keyword">sizeof</span>...(O)&gt;{};</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">return</span> std::tuple_cat(tup, <a class="code" href="namespaceimpl.html#adfb0b960ef51ea014c01bd1bcf50c996">params</a>(seq));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="keyword">template</span>&lt;std::<span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="namespaceimpl.html#a68dd14ee701556caad2df6b5c928f4c7">   31</a></span>&#160;    constexpr <span class="keyword">auto</span> <a class="code" href="namespaceimpl.html#a68dd14ee701556caad2df6b5c928f4c7">gen</a>(std::integral_constant&lt;std::size_t, N&gt;) {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespaceimpl.html#adfb0b960ef51ea014c01bd1bcf50c996">params</a>(std::make_index_sequence&lt;N&gt;{});</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    }</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> SZ&gt;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="namespaceimpl.html#a62b56dfa523b1c2b312131345288f894">   39</a></span>&#160;    <span class="keyword">using</span> <a class="code" href="namespaceimpl.html#a62b56dfa523b1c2b312131345288f894">typeTuple</a> = decltype(<a class="code" href="namespaceimpl.html#a68dd14ee701556caad2df6b5c928f4c7">impl::gen</a>(std::integral_constant&lt;size_t, SZ&gt;{}));</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="namespaceimpl.html#a3b7b3ac400290ba35333a17a469049f5">   45</a></span>&#160;    T <a class="code" href="namespaceimpl.html#a3b7b3ac400290ba35333a17a469049f5">sum_args</a>(T&amp; arg) { <span class="keywordflow">return</span> arg; }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> T1, <span class="keyword">typename</span> ... Ts&gt;</div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="namespaceimpl.html#aec12714efd5e7157b2b759cb4deb3b91">   51</a></span>&#160;    <span class="keywordtype">size_t</span> <a class="code" href="namespaceimpl.html#a3b7b3ac400290ba35333a17a469049f5">sum_args</a>(T&amp; first_arg, T1&amp; second_arg, Ts&amp;... tail_args) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        T hash_pairing = ((first_arg + second_arg) * (first_arg + second_arg + 1))/2 + second_arg;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">if</span> constexpr(<span class="keyword">sizeof</span>...(Ts) &gt; 0){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceimpl.html#a3b7b3ac400290ba35333a17a469049f5">sum_args</a>(hash_pairing, tail_args...);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keywordflow">return</span> hash_pairing;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> ... Ts&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="namespaceimpl.html#a5779f45a43a494d8f0bb5163895670c4">   66</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="namespaceimpl.html#a5779f45a43a494d8f0bb5163895670c4">print_args</a>(std::ostream &amp;cur_stream, <span class="keyword">const</span> T&amp; first_arg, <span class="keyword">const</span> Ts&amp; ...tail_args) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        cur_stream &lt;&lt; first_arg;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        (void)std::initializer_list&lt;int&gt;{((cur_stream &lt;&lt; tail_args), 0)...};</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ... Ts&gt;</div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="namespaceimpl.html#aa07f3e204f48e4a301093e16a41fe08e">   77</a></span>&#160;    std::ostream&amp; <a class="code" href="namespaceimpl.html#aa07f3e204f48e4a301093e16a41fe08e">operator&lt;&lt;</a>(std::ostream &amp;cur_stream, <span class="keyword">const</span> std::tuple&lt;Ts...&gt;&amp; in_parameter) {</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keyword">auto</span> print_to_stream = [&amp;cur_stream](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;...lyambda_args) {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            <a class="code" href="namespaceimpl.html#a5779f45a43a494d8f0bb5163895670c4">print_args</a>(cur_stream, lyambda_args...);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        };</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        std::apply(print_to_stream, in_parameter);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">return</span> cur_stream;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> SZ&gt;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classimpl_1_1_key.html">   93</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classimpl_1_1_key.html">Key</a> {</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;      <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="classimpl_1_1_key.html#a0e5d17c580816711fb9146869e73cfbf">Key</a>() = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keyword">template</span> &lt;<span class="keyword">typename</span>... Ts, <span class="keyword">typename</span> = std::enable_if_t&lt;SZ == <span class="keyword">sizeof</span>...(Ts)&gt;&gt;</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="classimpl_1_1_key.html#af80b6db50daca3ee6bab28eb389db3ea">   98</a></span>&#160;        <a class="code" href="classimpl_1_1_key.html#af80b6db50daca3ee6bab28eb389db3ea">Key</a>(Ts... args) : <a class="code" href="classimpl_1_1_key.html#a8d3dabe65f55ea9cbf2cf56ce112b162">indexes</a>(std::make_tuple(args...)) {}</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keyword">template</span>&lt;<span class="keyword">typename</span>...  Ts, <span class="keyword">typename</span> = std::enable_if_t&lt;SZ == <span class="keyword">sizeof</span>...(Ts)&gt;&gt;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="classimpl_1_1_key.html#a9a439a272def0df3ab0e38b86fe673d6">  101</a></span>&#160;        <a class="code" href="classimpl_1_1_key.html#a9a439a272def0df3ab0e38b86fe673d6">Key</a>(<span class="keyword">const</span> std::tuple&lt;Ts...&gt;&amp; arg_tuple) : <a class="code" href="classimpl_1_1_key.html#a8d3dabe65f55ea9cbf2cf56ce112b162">indexes</a>(arg_tuple) {}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classimpl_1_1_key.html#a1f6a4560e99310ad17ce05c6f6725d09">  103</a></span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classimpl_1_1_key.html#a1f6a4560e99310ad17ce05c6f6725d09">operator==</a>(<span class="keyword">const</span> <a class="code" href="classimpl_1_1_key.html">Key</a>&amp; param)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classimpl_1_1_key.html#a8d3dabe65f55ea9cbf2cf56ce112b162">indexes</a> == param.<a class="code" href="classimpl_1_1_key.html#a8d3dabe65f55ea9cbf2cf56ce112b162">indexes</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="classimpl_1_1_key.html#a4153a3336e626ba3310d4d40b23e51a7">  107</a></span>&#160;        <span class="keyword">auto</span> <a class="code" href="classimpl_1_1_key.html#a4153a3336e626ba3310d4d40b23e51a7">getTuple</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> <a class="code" href="classimpl_1_1_key.html#a8d3dabe65f55ea9cbf2cf56ce112b162">indexes</a>; }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="classimpl_1_1_key.html#a8d3dabe65f55ea9cbf2cf56ce112b162">  109</a></span>&#160;        <a class="code" href="namespaceimpl.html#a62b56dfa523b1c2b312131345288f894">typeTuple&lt;SZ&gt;</a> <a class="code" href="classimpl_1_1_key.html#a8d3dabe65f55ea9cbf2cf56ce112b162">indexes</a>;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    };</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span>&gt; <span class="keyword">class </span><a class="code" href="classimpl_1_1_key.html">Key</a>&gt;</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="classimpl_1_1_hash.html">  116</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classimpl_1_1_hash.html">Hash</a> {</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> SZ&gt;</div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="classimpl_1_1_hash.html#a5252e99c69f2c7879747dfcbf6c7e684">  119</a></span>&#160;        <span class="keywordtype">size_t</span> <a class="code" href="classimpl_1_1_hash.html#a5252e99c69f2c7879747dfcbf6c7e684">operator()</a>(<span class="keyword">const</span> <a class="code" href="classimpl_1_1_key.html">Key&lt;SZ&gt;</a>&amp; in_parameter)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            <span class="keyword">auto</span> hash_sum_tuple = [](<span class="keyword">const</span> <span class="keyword">auto</span>&amp;... lyambda_args) { <span class="keywordflow">return</span> <a class="code" href="namespaceimpl.html#a3b7b3ac400290ba35333a17a469049f5">impl::sum_args</a>(lyambda_args...); };</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            <span class="keywordflow">return</span> std::apply(hash_sum_tuple, in_parameter.<a class="code" href="classimpl_1_1_key.html#a4153a3336e626ba3310d4d40b23e51a7">getTuple</a>());</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    };</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}<span class="comment">//namespace impl</span></div>
+</div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="aclassimpl_1_1_hash_html"><div class="ttname"><a href="classimpl_1_1_hash.html">impl::Hash</a></div><div class="ttdef"><b>Definition:</b> extended_types.h:116</div></div>
+<div class="ttc" id="aclassimpl_1_1_key_html_a1f6a4560e99310ad17ce05c6f6725d09"><div class="ttname"><a href="classimpl_1_1_key.html#a1f6a4560e99310ad17ce05c6f6725d09">impl::Key::operator==</a></div><div class="ttdeci">bool operator==(const Key &amp;param) const</div><div class="ttdef"><b>Definition:</b> extended_types.h:103</div></div>
+<div class="ttc" id="aclassimpl_1_1_key_html_af80b6db50daca3ee6bab28eb389db3ea"><div class="ttname"><a href="classimpl_1_1_key.html#af80b6db50daca3ee6bab28eb389db3ea">impl::Key::Key</a></div><div class="ttdeci">Key(Ts... args)</div><div class="ttdef"><b>Definition:</b> extended_types.h:98</div></div>
+<div class="ttc" id="aclassimpl_1_1_key_html_a9a439a272def0df3ab0e38b86fe673d6"><div class="ttname"><a href="classimpl_1_1_key.html#a9a439a272def0df3ab0e38b86fe673d6">impl::Key::Key</a></div><div class="ttdeci">Key(const std::tuple&lt; Ts... &gt; &amp;arg_tuple)</div><div class="ttdef"><b>Definition:</b> extended_types.h:101</div></div>
+<div class="ttc" id="anamespaceimpl_html_a68dd14ee701556caad2df6b5c928f4c7"><div class="ttname"><a href="namespaceimpl.html#a68dd14ee701556caad2df6b5c928f4c7">impl::gen</a></div><div class="ttdeci">constexpr auto gen(std::integral_constant&lt; std::size_t, N &gt;)</div><div class="ttdef"><b>Definition:</b> extended_types.h:31</div></div>
+<div class="ttc" id="aclassimpl_1_1_hash_html_a5252e99c69f2c7879747dfcbf6c7e684"><div class="ttname"><a href="classimpl_1_1_hash.html#a5252e99c69f2c7879747dfcbf6c7e684">impl::Hash::operator()</a></div><div class="ttdeci">size_t operator()(const Key&lt; SZ &gt; &amp;in_parameter) const</div><div class="ttdef"><b>Definition:</b> extended_types.h:119</div></div>
+<div class="ttc" id="aclassimpl_1_1_key_html"><div class="ttname"><a href="classimpl_1_1_key.html">impl::Key</a></div><div class="ttdef"><b>Definition:</b> extended_types.h:93</div></div>
+<div class="ttc" id="anamespaceimpl_html_a62b56dfa523b1c2b312131345288f894"><div class="ttname"><a href="namespaceimpl.html#a62b56dfa523b1c2b312131345288f894">impl::typeTuple</a></div><div class="ttdeci">decltype(impl::gen(std::integral_constant&lt; size_t, SZ &gt;{})) typeTuple</div><div class="ttdef"><b>Definition:</b> extended_types.h:39</div></div>
+<div class="ttc" id="aclassimpl_1_1_key_html_a4153a3336e626ba3310d4d40b23e51a7"><div class="ttname"><a href="classimpl_1_1_key.html#a4153a3336e626ba3310d4d40b23e51a7">impl::Key::getTuple</a></div><div class="ttdeci">auto getTuple() const</div><div class="ttdef"><b>Definition:</b> extended_types.h:107</div></div>
+<div class="ttc" id="aclassimpl_1_1_key_html_a0e5d17c580816711fb9146869e73cfbf"><div class="ttname"><a href="classimpl_1_1_key.html#a0e5d17c580816711fb9146869e73cfbf">impl::Key::Key</a></div><div class="ttdeci">Key()=delete</div></div>
+<div class="ttc" id="anamespaceimpl_html_aa07f3e204f48e4a301093e16a41fe08e"><div class="ttname"><a href="namespaceimpl.html#aa07f3e204f48e4a301093e16a41fe08e">impl::operator&lt;&lt;</a></div><div class="ttdeci">std::ostream &amp; operator&lt;&lt;(std::ostream &amp;cur_stream, const std::tuple&lt; Ts... &gt; &amp;in_parameter)</div><div class="ttdef"><b>Definition:</b> extended_types.h:77</div></div>
+<div class="ttc" id="aclassimpl_1_1_key_html_a8d3dabe65f55ea9cbf2cf56ce112b162"><div class="ttname"><a href="classimpl_1_1_key.html#a8d3dabe65f55ea9cbf2cf56ce112b162">impl::Key::indexes</a></div><div class="ttdeci">typeTuple&lt; SZ &gt; indexes</div><div class="ttdef"><b>Definition:</b> extended_types.h:109</div></div>
+<div class="ttc" id="anamespaceimpl_html"><div class="ttname"><a href="namespaceimpl.html">impl</a></div><div class="ttdef"><b>Definition:</b> extended_types.h:7</div></div>
+<div class="ttc" id="anamespaceimpl_html_a3b7b3ac400290ba35333a17a469049f5"><div class="ttname"><a href="namespaceimpl.html#a3b7b3ac400290ba35333a17a469049f5">impl::sum_args</a></div><div class="ttdeci">T sum_args(T &amp;arg)</div><div class="ttdef"><b>Definition:</b> extended_types.h:45</div></div>
+<div class="ttc" id="anamespaceimpl_html_adfb0b960ef51ea014c01bd1bcf50c996"><div class="ttname"><a href="namespaceimpl.html#adfb0b960ef51ea014c01bd1bcf50c996">impl::params</a></div><div class="ttdeci">constexpr auto params(std::index_sequence&lt; 0 &gt;)</div><div class="ttdef"><b>Definition:</b> extended_types.h:13</div></div>
+<div class="ttc" id="anamespaceimpl_html_a5779f45a43a494d8f0bb5163895670c4"><div class="ttname"><a href="namespaceimpl.html#a5779f45a43a494d8f0bb5163895670c4">impl::print_args</a></div><div class="ttdeci">void print_args(std::ostream &amp;cur_stream, const T &amp;first_arg, const Ts &amp;...tail_args)</div><div class="ttdef"><b>Definition:</b> extended_types.h:66</div></div>
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.17
+</small></address>
+</body>
+</html>
