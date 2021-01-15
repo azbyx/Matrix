@@ -1,4 +1,4 @@
-#include "../headers/extended_matrix.h"
+#include "extended_matrix.h"
 #include "gtest/gtest.h"
 #include <vector>
 
@@ -10,7 +10,7 @@ TEST(matrix_general, assignment_concatenation) {
     ((matrix[101][99][100] = 10) = 110) = 1110;
 
     ASSERT_EQ(matrix[101][99][100],1110);
-    ASSERT_EQ(matrix.size(), 1);
+    ASSERT_EQ(matrix.size(), 1u);
 
 }
 
@@ -33,7 +33,7 @@ TEST(matrix_general, traversing_elements_with_non_default_values) {
         sumValues += value;
     }
 
-    ASSERT_EQ(valueAccumulator.size(), 6);
+    ASSERT_EQ(valueAccumulator.size(), 6u);
     ASSERT_EQ(sumValues, 3);
 }
 
@@ -49,7 +49,7 @@ TEST(matrix_2D, checking_default_value) {
         }
     }
 
-    ASSERT_EQ(matrix.size(), 0);
+    ASSERT_EQ(matrix.size(), 0u);
 }
 
 TEST(matrix_2D, insert_remove) {
@@ -65,7 +65,7 @@ TEST(matrix_2D, insert_remove) {
 
     for (size_t i = 0; i < SIZE; ++i) {
         for (size_t j = 0; j < SIZE; ++j) {
-            ASSERT_EQ(matrix[i][j], i * SIZE + j);
+            ASSERT_EQ(static_cast<size_t>(matrix[i][j]), i * SIZE + j);
         }
     }
 
@@ -77,7 +77,7 @@ TEST(matrix_2D, insert_remove) {
         }
     }
 
-    ASSERT_EQ(matrix.size(), 0);
+    ASSERT_EQ(matrix.size(), 0u);
 }
 
 TEST(matrix_5D, checking_default_value) {
@@ -96,7 +96,7 @@ TEST(matrix_5D, checking_default_value) {
         }
     }
 
-    ASSERT_EQ(0, matrix.size());
+    ASSERT_EQ(0u, matrix.size());
 }
 
 TEST(matrix_5D, insert_remove) {
@@ -107,13 +107,13 @@ TEST(matrix_5D, insert_remove) {
     matrix[2][4][11][8][1] = 99;
     matrix[1][5][9][10][3] = 9;
 
-    ASSERT_EQ(matrix.size(), 3);
+    ASSERT_EQ(matrix.size(), 3u);
 
     matrix[2][5][6][10][1] = -99;
     matrix[2][4][11][8][1] = -99;
     matrix[1][5][9][10][3] = -99;
 
-    ASSERT_EQ(matrix.size(), 0);
+    ASSERT_EQ(matrix.size(), 0u);
 }
 
 int main(int argc, char** argv) {

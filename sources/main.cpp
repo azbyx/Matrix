@@ -10,7 +10,7 @@
 *This project is an implementation of the endless sparse matrix.
 */
 
-#include "../headers/extended_matrix.h"
+#include "extended_matrix.h"
 #include <iostream>
 
 

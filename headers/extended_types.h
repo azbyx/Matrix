@@ -36,16 +36,16 @@ namespace impl {
     * Defining tuple typename fix-size with elements type size_t
     */
     template<size_t SZ>
-    using typeTuple = decltype(impl::gen(std::integral_constant<size_t, SZ>{}));
+    using TupleNArgs = decltype(gen(std::integral_constant<size_t, SZ>{}));
 
     /**
-    * Helper from once argument for counting hash-summ
+    * Helper from once argument for counting hash-sum
     */
     template <typename T>
     T sum_args(T& arg) { return arg; }
 
     /**
-    * Helper from many argument for counting hash-summ
+    * Helper from many argument for counting hash-sum
     */
     template <typename T, typename T1, typename ... Ts>
     size_t sum_args(T& first_arg, T1& second_arg, Ts&... tail_args) {
@@ -106,7 +106,7 @@ namespace impl {
 
         auto getTuple() const { return indexes; }
 
-        typeTuple<SZ> indexes;
+        TupleNArgs<SZ> indexes;
     };
 
     /**

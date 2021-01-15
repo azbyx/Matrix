@@ -1,24 +1,31 @@
 cmake_minimum_required(VERSION 3.2)
 
 set(NAME_EXECUTABLE "matrix")
-set(NAME_TEST "tests_matrix")
-set(NAME_HEADERS "./headers/extended_types.h" "./headers/extended_matrix.h" )
+set(NAME_TEST "matrix_tests")
+set(PATH_HEADERS "headers/")
+set(PATH_SRC "sources/")
 
-if($ENV{TRAVIS_BUILD_NUMBER})
-	project(${NAME_EXECUTABLE} VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER}  LANGUAGES CXX)
-else()
-	project(${NAME_EXECUTABLE} VERSION 0.0.1  LANGUAGES CXX)
+if(NOT DEFINED ENV{TRAVIS_BUILD_NUMBER})
+    set(ENV{TRAVIS_BUILD_NUMBER} 1)
 endif()
+
+project(${NAME_EXECUTABLE} VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER}  LANGUAGES CXX)
 
 exec_program(git ARGS submodule update --init --recursive)
 get_filename_component(GTEST_SOURCE ./googletest ABSOLUTE)
 add_subdirectory(${GTEST_SOURCE} "googletest")
 
-add_executable(${NAME_EXECUTABLE} ./sources/main.cpp)
+#message("GTEST_SOURCE - " ${GTEST_SOURCE})
 
-add_executable(${NAME_TEST} ./sources/gtests.cpp)
+add_executable(${NAME_EXECUTABLE} ${PATH_SRC}main.cpp)
+
+target_include_directories(${NAME_EXECUTABLE} PRIVATE ${PATH_HEADERS})
+
+add_executable(${NAME_TEST} ${PATH_SRC}gtests.cpp)
 
 target_link_libraries(${NAME_TEST} PRIVATE gtest)
+
+target_include_directories(${NAME_TEST} PRIVATE ${PATH_HEADERS})
 
 set_target_properties(${NAME_EXECUTABLE} PROPERTIES
     CXX_STANDARD 17
