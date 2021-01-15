@@ -80,9 +80,9 @@ $(function() {
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Определения типов</h2></td></tr>
-<tr class="memitem:a62b56dfa523b1c2b312131345288f894"><td class="memTemplParams" colspan="2">template&lt;size_t SZ&gt; </td></tr>
-<tr class="memitem:a62b56dfa523b1c2b312131345288f894"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceimpl.html#a62b56dfa523b1c2b312131345288f894">typeTuple</a> = decltype(<a class="el" href="namespaceimpl.html#a68dd14ee701556caad2df6b5c928f4c7">impl::gen</a>(std::integral_constant&lt; size_t, SZ &gt;{}))</td></tr>
-<tr class="separator:a62b56dfa523b1c2b312131345288f894"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e834de7f929c44933f9029b779153df"><td class="memTemplParams" colspan="2">template&lt;size_t SZ&gt; </td></tr>
+<tr class="memitem:a1e834de7f929c44933f9029b779153df"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceimpl.html#a1e834de7f929c44933f9029b779153df">TupleNArgs</a> = decltype(<a class="el" href="namespaceimpl.html#a68dd14ee701556caad2df6b5c928f4c7">gen</a>(std::integral_constant&lt; size_t, SZ &gt;{}))</td></tr>
+<tr class="separator:a1e834de7f929c44933f9029b779153df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Функции</h2></td></tr>
@@ -108,8 +108,8 @@ $(function() {
 <tr class="separator:aa07f3e204f48e4a301093e16a41fe08e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Типы</h2>
-<a id="a62b56dfa523b1c2b312131345288f894"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a62b56dfa523b1c2b312131345288f894">&#9670;&nbsp;</a></span>typeTuple</h2>
+<a id="a1e834de7f929c44933f9029b779153df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e834de7f929c44933f9029b779153df">&#9670;&nbsp;</a></span>TupleNArgs</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -117,7 +117,7 @@ $(function() {
 template&lt;size_t SZ&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="namespaceimpl.html#a62b56dfa523b1c2b312131345288f894">impl::typeTuple</a> = typedef decltype(<a class="el" href="namespaceimpl.html#a68dd14ee701556caad2df6b5c928f4c7">impl::gen</a>(std::integral_constant&lt;size_t, SZ&gt;{}))</td>
+          <td class="memname">using <a class="el" href="namespaceimpl.html#a1e834de7f929c44933f9029b779153df">impl::TupleNArgs</a> = typedef decltype(<a class="el" href="namespaceimpl.html#a68dd14ee701556caad2df6b5c928f4c7">gen</a>(std::integral_constant&lt;size_t, SZ&gt;{}))</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -296,7 +296,7 @@ template&lt;typename T &gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Helper from once argument for counting hash-summ </p>
+<p>Helper from once argument for counting hash-sum </p>
 
 </div>
 </div>
@@ -333,7 +333,7 @@ template&lt;typename T , typename T1 , typename ... Ts&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Helper from many argument for counting hash-summ </p>
+<p>Helper from many argument for counting hash-sum </p>
 
 </div>
 </div>

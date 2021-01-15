@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['typetuple_52',['typeTuple',['../namespaceimpl.html#a62b56dfa523b1c2b312131345288f894',1,'impl']]]
+  ['tuplenargs_52',['TupleNArgs',['../namespaceimpl.html#a1e834de7f929c44933f9029b779153df',1,'impl']]]
 ];
